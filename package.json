@@ -1,0 +1,30 @@
+{
+  "name": "xyaml",
+  "version": "0.0.1",
+  "main": "./lib/index.js",
+  "description": "eXtended YAML loader",
+  "keywords": [],
+  "homepage": "http://sencort.com",
+  "license": "MIT",
+  "devDependencies": {
+    "tap": "^10.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:teniryte/xyaml.git"
+  },
+  "author": {
+    "name": "Denis Ivanov",
+    "email": "teniryte@gmail.com"
+  },
+  "scripts": {
+    "test": "node ./test"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "expect.js": "^0.3.1",
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.4",
+    "mocha": "^3.5.3"
+  }
+}
