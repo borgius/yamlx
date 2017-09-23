@@ -7,66 +7,82 @@ const xyaml = require('xyaml');
 var data = xyaml.loadFile(__dirname + '/settings.yaml');
 ```
 
-## Commands
+## YAML File Example
 
 ```yaml
+# Regular Properties
 port: 8080
 domain: test.ru
 
-# Interpolation
+# Interpolation: «test.ru:8080»
 url: ${domain}:${port}
-test: ${root.fullName()} ${filename} ${dirname}
 
-# Include other files
+# Include File «icons.yaml» Relative to Current Directory
 icons: ~include(icons)
+
+# Include File By URL (Download and Include)
 icons: ~include(https://pale.pro/s/assets/test/admin.yaml)
+
+# Download Text From URL
 script: ~download(https://pale.pro/s/assets/test/admin.yaml)
 ```
 
 ## API
 
+### xyaml
+
+```js
+xyaml.loadFile(filename, [opts]);
+```
+
 ### Data
 
-- Constructor
-  - `new Date(data, opts = {})`
-- Paths
-  - `fullPath([name])`
-  - `fullName([name])`
-- Fork
-  - `fork([name])`
-- Parents
-  - `rootData()`
-  - `getParent([name])`
-  - `dataParent([name])`
-  - `dataParents([name], [includeSelf = false])`
-- Data
-  - `getData([name])`
-  - `log([name])`
-  - `toJSON([name])`
-- Options
-  - `getOptions()`
-  - `option(name, val)`
-  - `option(name)`
-- Files
-  - `getDirname()`
-  - `getFilename()`
-  - `resolve([path])`
-- Properties
-  - `def(name, value)`
-  - `def(name)`
-  - `def()`
-  - `has(name)`
-  - `keys()`
-  - `del(name)`
-  - `set(name, value)`
-  - `get(name)`
-- Private
-  - `priv()`
-  - `priv(name)`
-  - `priv(name, value)`
-  - `privHas(name)`
-  - `privKeys()`
-  - `privDel(name)`
-- Eval
-  - `expression(value)`
-  - `interpolate(value)`
+#### Constructor
+
+```js
+var data = new Data(data, opts = {});
+```
+
+#### Methods
+
+- Paths:
+  - `fullPath([name])`: Get full pathname.
+  - `fullName([name])`: Get full data's name.
+- Fork:
+  - `fork([name])`: Fork data object.
+- Parents:
+  - `rootData()`: Get root data object.
+  - `getParent([name])`: Get path's parent object.
+  - `dataParent([name])`: Get path's data parent object.
+  - `dataParents([name], [includeSelf = false])`: Get path's data parent objects array.
+- Data:
+  - `getData([name])`: Get plain javascript-object.
+  - `log([name])`: Log plain object data to console.
+  - `toJSON([name])`: Get JSON-serialized string.
+- Options:
+  - `getOptions()`: Get full options object.
+  - `option(name)`: Get option value.
+  - `option(name, val)`: Set option value.
+- Files:
+  - `getDirname()`: Get data's directory name.
+  - `getFilename()`: Get data's file name.
+  - `resolve([path])`: Resolve path relative to data's directory name.
+- Properties:
+  - `def()`: Get data's properties object.
+  - `def(name)`: Get property.
+  - `def(name, value)`: Set property.
+  - `has(name)`: `true` if data has property `name`.
+  - `keys()`: Get data's properties names array.
+  - `del(name)`: Delete property `name`.
+  - `set(name, value)`: Set property.
+  - `get(name)`: Get property.
+- Private:
+  - `priv()`: Get data's private properties object.
+  - `priv(name)`: Get private property value.
+  - `priv(name, value)`: Set private property value.
+  - `privHas(name)`: `true` if data has private property `name`.
+  - `privKeys()`: Get data's private properties names array.
+  - `privDel(name)`: Delete private property `name`.
+- Eval:
+  - `expression(value)`: Eval expression `value` in data's scope (context contains properties `self`, `root`, `filename`, `dirname` and all properties of current data).
+  - `interpolate(value)`: Replace expressions like `${expression}` in text `value`.
