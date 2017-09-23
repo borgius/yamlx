@@ -1,6 +1,6 @@
 {
   "name": "xyaml",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/index.js",
   "description": "eXtended YAML loader",
   "keywords": [],
@@ -26,5 +26,8 @@
     "js-yaml": "^3.10.0",
     "lodash": "^4.17.4",
     "mocha": "^3.5.3"
+  },
+  "scripts": {
+    "test": "mocha test"
   }
 }
