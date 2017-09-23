@@ -14,6 +14,12 @@ var data = xyaml.loadFile(__dirname + '/settings.yaml');
 port: 8080
 domain: test.ru
 
+# To String
+portStr: ~str(${self.port})
+
+# To Number
+portNum: ~num(${self.portStr})
+
 # Interpolation: «test.ru:8080»
 url: ${domain}:${port}
 
