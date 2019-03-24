@@ -5,6 +5,7 @@ url: ${domain}:${port}
 level1:
   level2:
     level3: test
+    -merge: ~merge(items)
 
 icons: ~import(icons)
 test1: ~read(${name}1.txt)

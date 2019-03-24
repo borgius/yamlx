@@ -6,4 +6,4 @@ const x = global.x = require('expect.js');
 
 var d = global.d = yamlx.loadFile('test/data/config.yaml');
 
-// console.log(d);
+console.log(d);
