@@ -30,10 +30,10 @@ url: ${domain}:${port}
 icons: ~include(icons)
 
 # Include File By URL (Download and Include)
-icons: ~include(https://pale.pro/s/assets/test/admin.yaml)
+icons: ~include(hhttps://raw.githubusercontent.com/borgius/yamlx/master/test/data/admin.yaml)
 
 # Download Text From URL
-script: ~download(https://pale.pro/s/assets/test/admin.yaml)
+script: ~download(https://raw.githubusercontent.com/borgius/yamlx/master/test/data/admin.yaml)
 ```
 
 ## API

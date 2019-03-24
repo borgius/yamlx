@@ -9,7 +9,7 @@ level1:
 icons: ~import(icons)
 test1: ~read(${name}1.txt)
 test2: ~include(test2.json)
-test3: ~download(https://pale.pro/s/assets/test/admin.yaml)
+test3: ~download(https://raw.githubusercontent.com/borgius/yamlx/master/test/data/icons.yaml)
 
 items:
   - ${name}1

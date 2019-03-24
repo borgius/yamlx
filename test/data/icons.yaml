@@ -7,4 +7,4 @@ manager:
       down: 3
       left: ~str(${down + 1})
   port: icon-${root.port}
-admin: ~include(https://pale.pro/s/assets/test/admin.yaml)
+admin: ~include(https://raw.githubusercontent.com/borgius/yamlx/master/test/data/admin.yaml)
