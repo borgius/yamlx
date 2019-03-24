@@ -12,12 +12,14 @@ describe('plugins', () => {
   it('includes files', () => {
     x(d.icons.manager.plus).to.be('icon-plus');
     x(d.test1).to.be(`TEST\n`);
-    x(d.test2).to.eql({ test2: true });
+    x(d.test2).to.eql({
+      test2: true
+    });
     x(d.icons.admin.test.test1).to.be(true);
   });
 
   it('downloads', () => {
-    x(d.test3).to.be('ui:\n  plus: admin-plus\ntest: ~include(test.yaml)\n');
+    x(d.test3).to.be('test:\n  test1: true\nui:\n  plus: admin-plus\n');
   });
 
 });
