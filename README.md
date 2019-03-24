@@ -1,10 +1,13 @@
-# xyaml
-eXtended YAML loader
+# yamlx
+
+YAML loader (eXtended)
+
+> forked from https://github.com/teniryte/xyaml
 
 ```js
-const xyaml = require('xyaml');
+const yamlx = require('yamlx');
 
-var data = xyaml.loadFile(__dirname + '/settings.yaml');
+var data = yamlx.loadFile(__dirname + '/settings.yaml');
 ```
 
 ## YAML File Example
@@ -35,10 +38,10 @@ script: ~download(https://pale.pro/s/assets/test/admin.yaml)
 
 ## API
 
-### xyaml
+### yamlx
 
 ```js
-xyaml.loadFile(filename, [opts]);
+yamlx.loadFile(filename, [opts]);
 ```
 
 ### Data
@@ -46,7 +49,7 @@ xyaml.loadFile(filename, [opts]);
 #### Constructor
 
 ```js
-var data = new Data(data, opts = {});
+var data = new Data(data, (opts = {}));
 ```
 
 #### Methods
@@ -66,7 +69,7 @@ var data = new Data(data, opts = {});
   - `log([name])`: Log plain object data to console.
   - `toJSON([name])`: Get JSON-serialized string.
 - Options:
-  - `getOptions()`: Get full options object.
+  - `options()`: Get full options object.
   - `option(name)`: Get option value.
   - `option(name, val)`: Set option value.
 - Files:

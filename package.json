@@ -1,32 +1,33 @@
 {
-  "name": "xyaml",
-  "version": "0.0.9",
-  "main": "./lib/index.js",
-  "description": "eXtended YAML loader",
-  "keywords": [],
-  "homepage": "http://sencort.com",
-  "license": "MIT",
-  "devDependencies": {
-    "tap": "^10.7.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+git@github.com:teniryte/xyaml.git"
-  },
   "author": {
-    "name": "Denis Ivanov",
-    "email": "teniryte@gmail.com"
+    "name": "Viktor Borg",
+    "email": "e3w2q1@gmail.com"
   },
-  "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/index.js"
-  },
+  "bundleDependencies": false,
   "dependencies": {
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.4",
+    "sync-request": "^6.1.0"
+  },
+  "deprecated": false,
+  "description": "YAML parser (eXtended)",
+  "devDependencies": {
     "colors": "^1.1.2",
     "expect.js": "^0.3.1",
-    "js-yaml": "^3.10.0",
-    "kit": "^1.0.22",
-    "lodash": "^4.17.4",
-    "mocha": "^3.5.3",
-    "plp": "0.0.5"
-  }
+    "mocha": "^4.0.1",
+    "tap": "^10.7.3"
+  },
+  "homepage": "https://github.com/borgius/yamlx",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "yamlx",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:borgius/yamlx.git"
+  },
+  "scripts": {
+    "test": "mocha ./test/index.js"
+  },
+  "version": "0.0.17"
 }
