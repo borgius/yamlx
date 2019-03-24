@@ -1,0 +1,10 @@
+manager:
+  plus: icon-plus
+  ui:
+    angle:
+      up: 1
+      right: 2
+      down: 3
+      left: ~str(${down + 1})
+  port: icon-${root.port}
+admin: ~include(https://pale.pro/s/assets/test/admin.yaml)

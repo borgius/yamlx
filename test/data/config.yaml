@@ -1,0 +1,17 @@
+port: 8080
+name: test
+domain: ${name}.ru
+url: ${domain}:${port}
+level1:
+  level2:
+    level3: test
+
+icons: ~import(icons)
+test1: ~read(${name}1.txt)
+test2: ~include(test2.json)
+test3: ~download(https://pale.pro/s/assets/test/admin.yaml)
+
+items:
+  - ${name}1
+  - ${name}2
+  - ${name}3
