@@ -1,0 +1,39 @@
+env: a631851
+port: 8080
+name: test
+domain: test.com
+url: 'test.com:8080'
+level1:
+  level2:
+    '0': test1
+    '1': test2
+    '2': test3
+    level3: test
+icons:
+  manager:
+    plus: icon-plus
+    ui:
+      angle:
+        up: 1
+        right: 2
+        down: 3
+        left: '4'
+    port: icon-8080
+  admin:
+    test:
+      test1: true
+    ui:
+      plus: admin-plus
+test1: |
+  TEST
+test2:
+  test2: true
+test3: |
+  test:
+    test1: true
+  ui:
+    plus: admin-plus
+items:
+  - test1
+  - test2
+  - test3

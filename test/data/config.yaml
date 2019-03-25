@@ -1,8 +1,10 @@
+env: ~env(USER)
 port: 8080
 name: test
-domain: ${name}.ru
+domain: ${name}.com
 url: ${domain}:${port}
 level1:
+  -export: ~export(root, export.yaml)
   level2:
     level3: test
     -merge: ~merge(items)

@@ -1,5 +1,5 @@
 .dist
-#test
+test/data/export.yaml
 package-lock.json
 
 # Logs
