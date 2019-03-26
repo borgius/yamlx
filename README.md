@@ -48,7 +48,7 @@ items:
 - ~str(exp) - convert to string
 - ~num(exp) - convert to number
 - ~bool(exp) - convert to boolean
-- ~env(varName) - fetch Environment variable
+- ~env(varName, default) - fetch Environment variable or use default value
 - ~merge(source1, source2, ...) - deep merge all sources to current level (key with merge command will be removed)
 - ~mergeOverwrite(source1, source2, ...) - alias for ~merge
 - ~mergeDiscard(source1, source2, ...) - same as merge, but NOT override exists keys
