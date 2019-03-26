@@ -1,9 +1,16 @@
-env: a631851
-port: 8080
+env: /Users/a631851
 name: test
+port: 8080
 domain: test.com
+portStr: '8080'
+portNum: 8080
+hasPort: true
 url: 'test.com:8080'
 level1:
+  port: 3000
+  port1: 3010
+  port2: 8090
+  portRange: 3000..8100
   level2:
     '0': test1
     '1': test2

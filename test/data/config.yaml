@@ -1,9 +1,16 @@
-env: ~env(USER)
-port: 8080
+env: ~env(HOME)
 name: test
+port: 8080
 domain: ${name}.com
+portStr: ~str(${self.port})
+portNum: ~num(${self.portStr})
+hasPort: ~bool(${portNum})
 url: ${domain}:${port}
 level1:
+  port: 3000
+  port1: ${port+10}
+  port2: ${root.port+10}
+  portRange: ${port1-10}..${port2+10}
   -export: ~export(root, export.yaml)
   level2:
     level3: test

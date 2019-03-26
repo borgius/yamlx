@@ -6,16 +6,13 @@
   "bundleDependencies": false,
   "dependencies": {
     "js-yaml": "^3.10.0",
-    "lodash": "^4.17.4",
-    "sync-request": "^6.1.0"
+    "lodash": "^4.17.4"
   },
   "deprecated": false,
   "description": "YAML parser (eXtended)",
   "devDependencies": {
-    "colors": "^1.1.2",
     "expect.js": "^0.3.1",
-    "mocha": "^4.0.1",
-    "tap": "^10.7.3"
+    "mocha": "^4.0.1"
   },
   "homepage": "https://github.com/borgius/yamlx",
   "keywords": [],

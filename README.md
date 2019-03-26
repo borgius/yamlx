@@ -7,34 +7,56 @@ YAML loader (eXtended)
 ```js
 const yamlx = require('yamlx');
 
-var data = yamlx.loadFile(__dirname + '/settings.yaml');
+var data = yamlx.loadFile(__dirname + '/pipeline.yaml');
 ```
 
 ## YAML File Example
 
 ```yaml
-# Regular Properties
+env: ~env(HOME)
+name: test
 port: 8080
-domain: test.ru
-
-# To String
+domain: ${name}.com
 portStr: ~str(${self.port})
-
-# To Number
 portNum: ~num(${self.portStr})
-
-# Interpolation: «test.ru:8080»
+hasPort: ~bool(${portNum})
 url: ${domain}:${port}
+level1:
+  port: 3000
+  port1: ${port+10}
+  port2: ${root.port+10}
+  portRange: ${port1-10}..${port2+10}
+  -export: ~export(root, export.yaml)
+  level2:
+    level3: test
+    -merge: ~merge(items)
 
-# Include File «icons.yaml» Relative to Current Directory
-icons: ~include(icons)
+icons: ~import(icons)
+test1: ~read(${name}1.txt)
+test2: ~include(test2.json)
+test3: ~read(admin.yaml)
 
-# Include File By URL (Download and Include)
-icons: ~include(hhttps://raw.githubusercontent.com/borgius/yamlx/master/test/data/admin.yaml)
-
-# Download Text From URL
-script: ~download(https://raw.githubusercontent.com/borgius/yamlx/master/test/data/admin.yaml)
+items:
+  - ${name}1
+  - ${name}2
+  - ${name}3
 ```
+
+## Yaml Commands
+
+- \${exp} - run expression. Available all keys from current level (`self`) and all parents levels + `root`
+- ~str(exp) - convert to string
+- ~num(exp) - convert to number
+- ~bool(exp) - convert to boolean
+- ~env(varName) - fetch Environment variable
+- ~merge(source1, source2, ...) - deep merge all sources to current level (key with merge command will be removed)
+- ~mergeOverwrite(source1, source2, ...) - alias for ~merge
+- ~mergeDiscard(source1, source2, ...) - same as merge, but NOT override exists keys
+- ~mergeAppend(source1, source2, ...) - same as merge, but also concat arrays
+- ~del(key1, key2, ...) - remove specified keys
+- ~include(filename) - read yaml/json file in include as object
+- ~read(filename) - read and insert file as string
+- ~export(key, filename.yaml) - export specified key as YAML or JSON
 
 ## API
 
